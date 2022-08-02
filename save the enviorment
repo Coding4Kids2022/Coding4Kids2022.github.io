@@ -1,9 +1,0 @@
-{
-  "description": "Friendly OpenSea Creature that enjoys long swims in the ocean.", 
-  "external_url": "https://openseacreatures.io/3", 
-  "image": "https://github.com/Coding4Kids2022/Leo-Leon/blob/main/0.png?raw=true", 
-  "name": "destroyed jungle",
-  "attributes": [ 
-    {"trait_type":"Enviorment","value":"destroyed"}
-  ]
-}
