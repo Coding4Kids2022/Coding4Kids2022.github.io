@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style> body {
+            background-image: url("https://github.com/Coding4Kids2022/Leo-Leon/blob/bdb8d0bf9dcf0946c3622780fd1f766d0179a047/Folie1.jpg?raw=true");
+            background-size: 100vw 100vh;
+        }
+        button {
+display: inline-block;
+background-color: #38d838;
+border-radius: 10px;
+border: 4px double #cccccc;
+color: #eeeeee;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 200px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+#Felder{
+    width:100%;
+    position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+#parent_1{
+    
+                position: relative;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+}
+#parent_2{
+    position: relative;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);   
+}
+#input1{
+    display: inline-block;
+border-radius: 10px;
+border: 4px double #cccccc;
+color: #000000;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 200px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+    
+}
+#input2{
+    display: inline-block;
+border-radius: 10px;
+border: 4px double #cccccc;
+color: #000000;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 200px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+    
+}
+#input3{
+    display: inline-block;
+border-radius: 10px;
+border: 4px double #cccccc;
+color: #000000;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 200px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+    
+}
+
+
+         </style> 
+        <title>
+            Lotterie Wifi
+        </title>
+        
+    </head>  
+    
+
+    <body>
+        <div id="parent_1">
+            <div id="Felder">
+                <input type="number" min="1" max="45" id="input1">
+                <input type="number" min="1" max="45" id="input2">
+                <input type="number" min="1" max="45" id="input3">
+               </div> 
+        </div>
+        <div id = parent_2>
+     <div id="Button">
+        <button onclick = "Submit()">Bestätigen</button>
+    </div>
+</div>
+        
+        
+        
+
+        <script>
+           function Submit(){
+           
+          var input1js = document.getElementById("input1").value;
+          var input2js = document.getElementById("input2").value;
+          var input3js = document.getElementById("input3").value;
+
+          if(input1js >= 1){
+            if(input1js <= 45){
+                
+                var Zahl1 = Math.round(Math.random() * (max - min)) + min;
+
+
+            }else{
+            alert("Bitte geben sie beim ersten Feld eine Zahl von 1 bis 45 ein")
+                   }
+
+           } else{
+            alert("Bitte geben sie beim ersten Feld  eine Zahl von 1 bis 45 ein")
+                   }
+                   if(input2js >= 1){
+            if(input2js <= 45){
+                var Zahl2 = Math.round(Math.random() * (max - min)) + min;
+            }else{
+            alert("Bitte geben sie beim zweiten Feld eine Zahl von 1 bis 45 ein")
+                   }
+
+           } else{
+            alert("Bitte geben sie beim zweiten Feld eine Zahl von 1 bis 45 ein")
+                   }
+                   if(input3js >= 1){
+            if(input3js <= 45){
+               
+                var Zahl3 = Math.round(Math.random() * (max - min)) + min;
+            }else{
+            alert("Bitte geben sie beim dritten Feld eine Zahl von 1 bis 45 ein")
+                   }
+
+           } else{
+            alert("Bitte geben sie beim dritten Feld eine Zahl von 1 bis 45 ein")
+                   }
+        }
+        var min = 1;
+var max = 45;
+
+
+
+
+
+
+        
+        </script> 
+        
+        
+    </body>
+    
+</html>
