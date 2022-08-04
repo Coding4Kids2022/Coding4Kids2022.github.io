@@ -225,10 +225,10 @@ margin: 5px;
 type="application/javascript"></script>
 <script>
 
-
+var provider
 async function async1(){// A Web3Provider wraps a standard Web3 provider, which is
 // what MetaMask injects as window.ethereum into each page
-const provider = new ethers.providers.Web3Provider(window.ethereum)
+provider = new ethers.providers.Web3Provider(window.ethereum)
 
 // MetaMask requires requesting permission to connect users accounts
 await provider.send("eth_requestAccounts", []);
@@ -317,7 +317,7 @@ function startplay(){
             var input2js = document.getElementById("input2").value;
             var input3js = document.getElementById("input3").value;
 
-    tx = daiWithSigner.onlinelotto_transaction(input1js,input2js,input3js,{value:dai});
+    var tx = daiWithSigner.onlinelotto_transaction(input1js,input2js,input3js,{value:dai});
 }
 
 </script>
