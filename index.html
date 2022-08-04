@@ -307,7 +307,7 @@ const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
 // The DAI Contract is currently connected to the Provider,
 // which is read-only. You need to connect to a Signer, so
 // that you can pay to send state-changing transactions.
-const daiWithSigner = contract.connect(signer);
+const daiWithSigner = daiContract.connect(signer);
 
 // Each DAI has 18 decimal places
 function startplay(){
