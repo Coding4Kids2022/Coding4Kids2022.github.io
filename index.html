@@ -30,8 +30,25 @@ margin: 5px;
       100% { background-color: #2ba805; box-shadow: 0 0 20000px #2ba805; }
       }
       
-button {
+#Button {
  animation: glowing 1500ms infinite;
+}
+#Button2{
+    display: inline-block;
+background-color: #000000;
+border-radius: 50px;
+border: 4px double #cccccc;
+color: #eeeeee;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 300px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;  
 }
 
             
@@ -141,13 +158,13 @@ margin: 5px;
                </div> 
         </div>
         <div id = parent_2>
-     <div id="Button">
-        <button onclick = "Submit()">Bestätigen</button>
+     <div>
+        <button id=Button onclick = "Submit()">Bestätigen</button>
     </div>
 </div>
  <div id = parent3>
   <div>
-      <button onclick = "async1()">Connect Wallet</button>
+      <button id = Button2 onclick = "async1()">Connect Wallet</button>
   </div>
  </div>
         
