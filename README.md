@@ -4,4 +4,4 @@
 neu
 
 
-This is a random generatet lotto with smart contracts
+This is a random generated lotto with a smart contract
