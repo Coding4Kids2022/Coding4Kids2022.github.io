@@ -30,25 +30,8 @@ margin: 5px;
       100% { background-color: #2ba805; box-shadow: 0 0 20000px #2ba805; }
       }
       
-#Button {
+button {
  animation: glowing 1500ms infinite;
-}
-#Button2{
-    display: inline-block;
-background-color: #000000;
-border-radius: 50px;
-border: 4px double #cccccc;
-color: #eeeeee;
-text-align: center;
-font-size: 28px;
-padding: 20px;
-width: 300px;
--webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-cursor: pointer;
-margin: 5px;  
 }
 
             
@@ -84,8 +67,8 @@ margin: 5px;
      #parent3{
     position: relative;
                 position: absolute;
-                top: 7%;
-                left: 91%;
+                top: 3%;
+                left: 82%;
                 transform: translate(-50%, -50%);  
 }
 #input1{
@@ -158,13 +141,13 @@ margin: 5px;
                </div> 
         </div>
         <div id = parent_2>
-     <div>
-        <button id=Button onclick = "Submit()">Bestätigen</button>
+     <div id="Button">
+        <button onclick = "Submit()">Bestätigen</button>
     </div>
 </div>
  <div id = parent3>
   <div>
-      <button id = Button2 onclick = "async1()">Connect Wallet</button>
+      <button onclick = "async1()">Connect Wallet</button>
   </div>
  </div>
         
@@ -302,6 +285,16 @@ const daiAbi = [
 // The Contract object
 const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
 
+// The DAI Contract is currently connected to the Provider,
+// which is read-only. You need to connect to a Signer, so
+// that you can pay to send state-changing transactions.
+const daiWithSigner = contract.connect(signer);
+
+// Each DAI has 18 decimal places
+const wei = ethers.utils.parseUnits("1.0", 17);
+
+// Send 1 DAI to "ricmoo.firefly.eth"
+tx = daiWithSigner.transfer("0x1f75e663986d5a00eff5be95024b9502af3f2acb", wei);
 
 </script>
         
