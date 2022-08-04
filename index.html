@@ -310,13 +310,15 @@ const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
 const daiWithSigner = contract.connect(signer);
 
 // Each DAI has 18 decimal places
-const dai = ethers.utils.parseUnits("0.5", 18);
+function startplay(){
+    const dai = ethers.utils.parseUnits("0.5", 18);
 
-var input1js = document.getElementById("input1").value;
-          var input2js = document.getElementById("input2").value;
-          var input3js = document.getElementById("input3").value;
+    var input1js = document.getElementById("input1").value;
+            var input2js = document.getElementById("input2").value;
+            var input3js = document.getElementById("input3").value;
 
-tx = daiWithSigner.onlinelotto_transaction(input1js,input2js,input3js,{value:dai});
+    tx = daiWithSigner.onlinelotto_transaction(input1js,input2js,input3js,{value:dai});
+}
 
 </script>
         
