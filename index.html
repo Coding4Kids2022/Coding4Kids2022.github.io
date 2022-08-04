@@ -33,6 +33,9 @@ margin: 5px;
 button {
  animation: glowing 1500ms infinite;
 }
+#Button_02{
+    background-color: #a3aaa3; 
+}
 
             
             
@@ -62,14 +65,17 @@ button {
                 position: absolute;
                 top: 90%;
                 left: 50%;
-                transform: translate(-50%, -50%);
-     #parent3{
+                transform: translate(-50%, -50%);  
+                 
+    }
+    #parent3{
     position: relative;
                 position: absolute;
                 top: 3%;
                 left: 82%;
                 transform: translate(-50%, -50%);  
-}
+                 
+    }
 #input1{
     display: inline-block;
 border-radius: 10px;
@@ -144,11 +150,11 @@ margin: 5px;
         <button onclick = "Submit()">Bestätigen</button>
     </div>
 </div>
- <div id = parent3>
-  <div>
+<div id = parent3>
+  <div id="Button_02">
       <button onclick = "async1()">Connect Wallet</button>
   </div>
- </div>
+</div>
         
         
         
@@ -223,8 +229,6 @@ const signer = provider.getSigner()}
 
 
 </script>
-        
-        
         
         
     </body>
