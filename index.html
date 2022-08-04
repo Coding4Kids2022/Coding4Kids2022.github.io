@@ -222,6 +222,70 @@ await provider.send("eth_requestAccounts", []);
 const signer = provider.getSigner()}
 
 
+
+
+// You can also use an ENS name for the contract address
+const daiAddress = "0x1f75e663986d5a00eff5be95024b9502af3f2acb";
+
+// The ERC-20 Contract ABI, which is a common contract interface
+// for tokens (this is the Human-Readable ABI format)
+const daiAbi = [
+		{
+			"inputs": [],
+			"name": "balance",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "number1",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "number2",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "number3",
+					"type": "uint256"
+				}
+			],
+			"name": "onlinelotto_transaction",
+			"outputs": [],
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "randomLottoNumber",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+  
+
+// The Contract object
+const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
+
+
 </script>
         
         
