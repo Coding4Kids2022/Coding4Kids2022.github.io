@@ -41,7 +41,7 @@ contract Lotto{
         return address(this).balance;
     }
 
-    function randomLottoNumber() public view returns(uint) {
+    function randomLottoNumber() internal view returns(uint) {
         return uint(keccak256(abi.encodePacked(block.timestamp,block.difficulty,  
         msg.sender))) % 20 + 1;
     }
