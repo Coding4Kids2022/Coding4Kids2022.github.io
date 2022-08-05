@@ -299,7 +299,11 @@ const daiAbi = [
 	]
   
 
-// The Contract object
+
+// Each DAI has 18 decimal places
+function startplay(){
+    
+    // The Contract object
 const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
 
 
@@ -309,8 +313,6 @@ const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
 // that you can pay to send state-changing transactions.
 const daiWithSigner = daiContract.connect(signer);
 
-// Each DAI has 18 decimal places
-function startplay(){
     const dai = ethers.utils.parseUnits("0.5", 18);
 
     var input1js = document.getElementById("input1").value;
