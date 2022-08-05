@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
     <head>
         <style> body {
@@ -225,18 +225,7 @@ margin: 5px;
 type="application/javascript"></script>
 <script>
 
-var provider
-async function async1(){// A Web3Provider wraps a standard Web3 provider, which is
-// what MetaMask injects as window.ethereum into each page
-provider = new ethers.providers.Web3Provider(window.ethereum)
 
-// MetaMask requires requesting permission to connect users accounts
-await provider.send("eth_requestAccounts", []);
-
-// The MetaMask plugin also allows signing transactions to
-// send ether and pay to change state within the blockchain.
-// For this, you need the account signer...
-const signer = provider.getSigner()}
 
 
 
@@ -299,7 +288,12 @@ const daiAbi = [
 	]
   
 
-// The Contract object
+
+
+// Each DAI has 18 decimal places
+function startplay(){
+    
+    // The Contract object
 const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
 
 
@@ -308,9 +302,6 @@ const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
 // which is read-only. You need to connect to a Signer, so
 // that you can pay to send state-changing transactions.
 const daiWithSigner = daiContract.connect(signer);
-
-// Each DAI has 18 decimal places
-function startplay(){
     const dai = ethers.utils.parseUnits("0.5", 18);
 
     var input1js = document.getElementById("input1").value;
