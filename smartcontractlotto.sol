@@ -8,6 +8,10 @@ contract Lotto{
         Owner=msg.sender;
     }
 
+    function donate() public payable{
+
+    }
+
     function onlinelotto_transaction(uint number1, uint number2, uint number3) public payable {
         require(number1 >= 1 && number1 <= 20, "Number1 invalid.");
         require(number2 >= 1 && number2 <= 20, "Number2 invalid.");
@@ -55,4 +59,3 @@ contract Lotto{
 
     }
 }   
-
