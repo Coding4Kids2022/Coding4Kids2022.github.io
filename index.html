@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style> body {
+            background-image: url("https://raw.githubusercontent.com/Coding4Kids2022/Coding4Kids2022.github.io/main/lotto_startscreen.jpg");
+            background-size: 100vw 100vh;
+        }
+        button {
+display: inline-block;
+background-color: #38d838;
+border-radius: 50px;
+border: 4px double #cccccc;
+color: #eeeeee;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 300px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+  
+@keyframes glowing {
+      0% { background-color: #2ba805; box-shadow: 0 0 20000px #2ba805; }
+      33% { background-color: #200bd8; box-shadow: 0 0 200000px #200bd8; }
+      66% { background-color: #e9058a; box-shadow: 0 0 200000px #e9058a; }
+      100% { background-color: #2ba805; box-shadow: 0 0 20000px #2ba805; }
+      }
+      
+#Button {
+ animation: glowing 1500ms infinite;
+}
+#Button2{
+    display: inline-block;
+background-color: #000000;
+border-radius: 50px;
+border: 4px double #cccccc;
+color: #eeeeee;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 300px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;  
+}
+
+#Button3{
+    display: inline-block;
+background-color: #181414;
+border-radius: 50px;
+border: 4px double #181414;
+color: #ff0000;
+text-align: center;
+font-size: 25px;
+padding: 5px;
+width: 180px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;   
+}
+
+            
+#Felder1 input{
+
+color:white;
+background-color: transparent;
+}               
+            
+
+#Felder input{
+
+    color:white;
+  background-color: transparent;
+}   
+
+
+            
+            
+            
+#Felder{
+    width:100%;
+    position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+   
+}
+#parent_1{
+    
+                position: relative;
+                position: absolute;
+                top: 50%;
+                left: 43%;
+                transform: translate(-50%, -50%);
+}
+#parent_2{
+    position: relative;
+                position: absolute;
+                top: 90%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+}
+     #parent3{
+    position: relative;
+                position: absolute;
+                top: 7%;
+                left: 91%;
+                transform: translate(-50%, -50%);  
+}
+#parent4{
+    position: relative;
+                position: absolute;
+                top: 91%;
+                left: 91%;
+                transform: translate(-50%, -50%);
+}
+
+#input1{
+    display: inline-block;
+border-radius: 10px;
+border: 4px double #cccccc;
+color: #000000;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 200px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+    
+}
+#input2{
+    display: inline-block;
+border-radius: 10px;
+border: 4px double #cccccc;
+color: #000000;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 200px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+    
+}
+#input3{
+    display: inline-block;
+border-radius: 10px;
+border: 4px double #cccccc;
+color: #000000;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 200px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+    
+}
+
+#input4{
+    display: inline-block;
+border-radius: 10px;
+border: 4px double #cccccc;
+color: #000000;
+text-align: center;
+font-size: 25px;
+padding: 10px;
+width: 170px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+
+
+
+         </style> 
+        <title>
+            CryptoLotto [Alpha 0.1]
+        </title>
+        
+    </head>  
+    
+
+    <body>
+        <div id="parent_1">
+            <div id="Felder">
+                <input type="number" min="1" max="45" id="input1">
+                <input type="number" min="1" max="45" id="input2">
+                <input type="number" min="1" max="45" id="input3">
+               </div> 
+        </div>
+        <div id = parent_2>
+     <div>
+        <button id=Button onclick = "Submit();startplay()">Bestätigen</button>
+    </div>
+</div>
+ <div id = parent3>
+  <div>
+      <button id = Button2 onclick = "async1()">Connect Wallet</button>
+  </div>
+ </div>
+ <div id="parent4">
+    
+    <div id="Felder1">
+        <input type="number" id="input4">
+    </div>
+    
+    <div id="donate">
+     
+     <button onclick="donate()" id="Button3">Donate❤️</button>
+    </div>
+    
+ </div>
+        
+        
+        
+
+        <script>
+           function Submit(){
+           
+          var input1js = document.getElementById("input1").value;
+          var input2js = document.getElementById("input2").value;
+          var input3js = document.getElementById("input3").value;
+
+          if(input1js >= 1){
+            if(input1js <= 20){
+                
+                
+
+
+            }else{
+            alert("Bitte geben sie beim ersten Feld eine Zahl von 1 bis 20 ein")
+                   }
+
+           } else{
+            alert("Bitte geben sie beim ersten Feld  eine Zahl von 1 bis 20 ein")
+                   }
+                   if(input2js >= 1){
+            if(input2js <= 20){
+                
+            }else{
+            alert("Bitte geben sie beim zweiten Feld eine Zahl von 1 bis 20 ein")
+                   }
+
+           } else{
+            alert("Bitte geben sie beim zweiten Feld eine Zahl von 1 bis 20 ein")
+                   }
+                   if(input3js >= 1){
+            if(input3js <= 20){
+               
+            }else{
+            alert("Bitte geben sie beim dritten Feld eine Zahl von 1 bis 20 ein")
+                   }
+
+           } else{
+            alert("Bitte geben sie beim dritten Feld eine Zahl von 1 bis 20 ein")
+                   }
+        }
+        
+
+
+
+
+
+
+
+        </script> 
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+type="application/javascript"></script>
+<script>
+
+var provider
+
+async function async1(){// A Web3Provider wraps a standard Web3 provider, which is
+// what MetaMask injects as window.ethereum into each page
+
+
+provider = new ethers.providers.Web3Provider(window.ethereum)
+
+// MetaMask requires requesting permission to connect users accounts
+await provider.send("eth_requestAccounts", []);
+
+// The MetaMask plugin also allows signing transactions to
+// send ether and pay to change state within the blockchain.
+// For this, you need the account signer...
+const signer = provider.getSigner()}
+
+
+
+
+// You can also use an ENS name for the contract address
+const daiAddress = "0xcd451a98bb2c63196ccdaf19a71b07389217d77a";
+
+// The ERC-20 Contract ABI, which is a common contract interface
+// for tokens (this is the Human-Readable ABI format)
+const daiAbi = [
+
+
+
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "balance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "donate",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "number1",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "number2",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "number3",
+				"type": "uint256"
+			}
+		],
+		"name": "onlinelotto_transaction",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "paybacktoowner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+
+
+]
+  
+
+
+// Each DAI has 18 decimal places
+function startplay(){
+    
+    // The Contract object
+const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
+
+
+
+// The DAI Contract is currently connected to the Provider,
+// which is read-only. You need to connect to a Signer, so
+// that you can pay to send state-changing transactions.
+
+provider = new ethers.providers.Web3Provider(window.ethereum)
+
+// MetaMask requires requesting permission to connect users accounts
+// The MetaMask plugin also allows signing transactions to
+// send ether and pay to change state within the blockchain.
+// For this, you need the account signer...
+const signer = provider.getSigner()
+
+const daiWithSigner = daiContract.connect(signer);
+
+    const dai = ethers.utils.parseUnits("5.0", 18);
+
+    var input1js = document.getElementById("input1").value;
+            var input2js = document.getElementById("input2").value;
+            var input3js = document.getElementById("input3").value;
+
+    var tx = daiWithSigner.onlinelotto_transaction(input1js,input2js,input3js,{value:dai});
+}
+
+
+
+function donate(){
+    
+       // The Contract object
+const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
+
+
+
+// The DAI Contract is currently connected to the Provider,
+// which is read-only. You need to connect to a Signer, so
+// that you can pay to send state-changing transactions.
+
+provider = new ethers.providers.Web3Provider(window.ethereum)
+
+// MetaMask requires requesting permission to connect users accounts
+// The MetaMask plugin also allows signing transactions to
+// send ether and pay to change state within the blockchain.
+// For this, you need the account signer...
+const signer = provider.getSigner()
+
+const daiWithSigner = daiContract.connect(signer);
+
+var input4js = document.getElementById("input4").value;
+
+
+const dai = ethers.utils.parseUnits(input4js, 18);
+
+    
+
+var tx = daiWithSigner.donate({value:dai});
+}
+
+</script>
+        
+        
+        
+        
+    </body>
+    
+</html>
