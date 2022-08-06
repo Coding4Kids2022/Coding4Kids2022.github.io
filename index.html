@@ -51,14 +51,39 @@ cursor: pointer;
 margin: 5px;  
 }
 
+#Button3{
+    display: inline-block;
+background-color: #181414;
+border-radius: 50px;
+border: 4px double #181414;
+color: #ff0000;
+text-align: center;
+font-size: 25px;
+padding: 5px;
+width: 180px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;   
+}
+
             
+#Felder1 input{
+
+color:white;
+background-color: transparent;
+}               
             
-            
+
 #Felder input{
 
     color:white;
   background-color: transparent;
-}          
+}   
+
+
             
             
             
@@ -93,6 +118,14 @@ margin: 5px;
                 left: 91%;
                 transform: translate(-50%, -50%);  
 }
+#parent4{
+    position: relative;
+                position: absolute;
+                top: 91%;
+                left: 91%;
+                transform: translate(-50%, -50%);
+}
+
 #input1{
     display: inline-block;
 border-radius: 10px;
@@ -145,6 +178,25 @@ margin: 5px;
     
 }
 
+#input4{
+    display: inline-block;
+border-radius: 10px;
+border: 4px double #cccccc;
+color: #000000;
+text-align: center;
+font-size: 25px;
+padding: 10px;
+width: 170px;
+-webkit-transition: all 0.5s;
+-moz-transition: all 0.5s;
+-o-transition: all 0.5s;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+
+
 
          </style> 
         <title>
@@ -171,6 +223,18 @@ margin: 5px;
   <div>
       <button id = Button2 onclick = "async1()">Connect Wallet</button>
   </div>
+ </div>
+ <div id="parent4">
+    
+    <div id="Felder1">
+        <input type="number" id="input4">
+    </div>
+    
+    <div id="donate">
+     
+     <button onclick="donate()" id="Button3">Donate❤️</button>
+    </div>
+    
  </div>
         
         
@@ -250,61 +314,78 @@ const signer = provider.getSigner()}
 
 
 // You can also use an ENS name for the contract address
-const daiAddress = "0x1f75e663986d5a00eff5be95024b9502af3f2acb";
+const daiAddress = "0xcd451a98bb2c63196ccdaf19a71b07389217d77a";
 
 // The ERC-20 Contract ABI, which is a common contract interface
 // for tokens (this is the Human-Readable ABI format)
 const daiAbi = [
-		{
-			"inputs": [],
-			"name": "balance",
-			"outputs": [
-				{
-					"internalType": "uint256",
-					"name": "",
-					"type": "uint256"
-				}
-			],
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "uint256",
-					"name": "number1",
-					"type": "uint256"
-				},
-				{
-					"internalType": "uint256",
-					"name": "number2",
-					"type": "uint256"
-				},
-				{
-					"internalType": "uint256",
-					"name": "number3",
-					"type": "uint256"
-				}
-			],
-			"name": "onlinelotto_transaction",
-			"outputs": [],
-			"stateMutability": "payable",
-			"type": "function"
-		},
-		{
-			"inputs": [],
-			"name": "randomLottoNumber",
-			"outputs": [
-				{
-					"internalType": "uint256",
-					"name": "",
-					"type": "uint256"
-				}
-			],
-			"stateMutability": "view",
-			"type": "function"
-		}
-	]
+
+
+
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "balance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "donate",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "number1",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "number2",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "number3",
+				"type": "uint256"
+			}
+		],
+		"name": "onlinelotto_transaction",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "paybacktoowner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+
+
+]
   
 
 
@@ -330,13 +411,46 @@ const signer = provider.getSigner()
 
 const daiWithSigner = daiContract.connect(signer);
 
-    const dai = ethers.utils.parseUnits("0.5", 18);
+    const dai = ethers.utils.parseUnits("5.0", 18);
 
     var input1js = document.getElementById("input1").value;
             var input2js = document.getElementById("input2").value;
             var input3js = document.getElementById("input3").value;
 
     var tx = daiWithSigner.onlinelotto_transaction(input1js,input2js,input3js,{value:dai});
+}
+
+
+
+function donate(){
+    
+       // The Contract object
+const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
+
+
+
+// The DAI Contract is currently connected to the Provider,
+// which is read-only. You need to connect to a Signer, so
+// that you can pay to send state-changing transactions.
+
+provider = new ethers.providers.Web3Provider(window.ethereum)
+
+// MetaMask requires requesting permission to connect users accounts
+// The MetaMask plugin also allows signing transactions to
+// send ether and pay to change state within the blockchain.
+// For this, you need the account signer...
+const signer = provider.getSigner()
+
+const daiWithSigner = daiContract.connect(signer);
+
+var input4js = document.getElementById("input4").value;
+
+
+const dai = ethers.utils.parseUnits(input4js, 18);
+
+    
+
+var tx = daiWithSigner.donate({value:dai});
 }
 
 </script>
